@@ -16,7 +16,6 @@
   "require": {
     "php": "^7",
     "ext-curl": "*",
-    "knplabs/knp-paginator-bundle": "dev-master",
     "plejeune/core-bundle": "dev-master"
   },
   "config": {
