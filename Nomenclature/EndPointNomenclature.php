@@ -20,4 +20,5 @@ class EndPointNomenclature extends AbstractNomenclature
     const PRICE = 'price';
     const STREAM = 'stream';
     const YOUTUBE = 'youtube';
+    const USER = 'user';
 }

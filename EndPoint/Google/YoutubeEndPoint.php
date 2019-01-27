@@ -23,13 +23,36 @@ class YoutubeEndPoint extends AbstractEndPoint
 
     public function getChannelName($channel_id)
     {
-
         $query = http_build_query(array(
             "part" => "snippet",
             "id" => $channel_id,
         ));
 
         $result = $this->getClient()->execute(self::URL . "channels?" . $query);
+
+        return json_decode($result);
+    }
+
+    /**
+     * Retrieve Live Broadcasts
+     *
+     * @param string $broadcastType
+     * @param string $pageToken
+     * @param int $maxResults
+     * @return array[]
+     */
+    public function liveBroadcasts($broadcastType, $pageToken = null, $maxResults = 50)
+    {
+        $queryParameters = [
+            "part" => "id,snippet,contentDetails,status",
+            "broadcastType" => $broadcastType,
+            "maxResults" => $maxResults,
+        ];
+        if($pageToken !== null) $queryParameters['pageToken'] = $pageToken;
+
+        $query = http_build_query($queryParameters);
+
+        $result = $this->getClient()->execute(self::URL . "liveBroadcasts?" . $query);
 
         return json_decode($result);
     }

@@ -27,6 +27,11 @@ class Configuration implements ConfigurationInterface
                             ->scalarNode('client_id')->end()
                         ->end()
                     ->end()
+                    ->arrayNode('youtube')
+                        ->children()
+                            ->scalarNode('client_id')->end()
+                        ->end()
+                    ->end()
                 ->end()
             ->end();
 
