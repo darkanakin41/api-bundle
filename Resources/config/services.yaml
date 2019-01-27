@@ -3,5 +3,3 @@ services:
     public: true
     class: PLejeune\ApiBundle\Service\ApiService
     arguments: ['%plejeune.api.config%']
-    tags:
-      - { name: twig.extension }
