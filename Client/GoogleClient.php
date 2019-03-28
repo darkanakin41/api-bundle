@@ -2,10 +2,20 @@
 
 namespace PLejeune\ApiBundle\Client;
 
-use PLejeune\ApiBundle\Client\AbstractClient;
-
 class GoogleClient extends AbstractClient
 {
+    private $referer;
+
+    /**
+     * @param mixed $referer
+     *
+     * @return GoogleClient
+     */
+    public function setReferer($referer)
+    {
+        $this->referer = $referer;
+        return $this;
+    }
     /**
      * @param $url
      * @param $parameters
@@ -19,6 +29,7 @@ class GoogleClient extends AbstractClient
             CURLOPT_SSL_VERIFYPEER => 0,
             CURLOPT_SSL_VERIFYHOST => 0,
             CURLOPT_HEADER => 0,
+            CURLOPT_REFERER => $this->referer,
         );
 
         $options = $default_parameters + $parameters;

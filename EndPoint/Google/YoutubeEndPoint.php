@@ -18,10 +18,10 @@ class YoutubeEndPoint extends AbstractEndPoint
 
         $result = $this->getClient()->execute(self::URL . "channels?" . $query);
 
-        return json_decode($result);
+        return json_decode($result, true);
     }
 
-    public function getChannelName($channel_id)
+    public function getChannelData($channel_id)
     {
         $query = http_build_query(array(
             "part" => "snippet",
@@ -30,7 +30,7 @@ class YoutubeEndPoint extends AbstractEndPoint
 
         $result = $this->getClient()->execute(self::URL . "channels?" . $query);
 
-        return json_decode($result);
+        return json_decode($result, true);
     }
 
     /**
@@ -54,15 +54,15 @@ class YoutubeEndPoint extends AbstractEndPoint
 
         $result = $this->getClient()->execute(self::URL . "liveBroadcasts?" . $query);
 
-        return json_decode($result);
+        return json_decode($result, true);
     }
 
-    public function getLastVideos($channel_id)
+    public function getChannelVideos($channel_id, $maxResults = 50)
     {
 
         $query = http_build_query(array(
             "part" => "id,snippet",
-            "maxResults" => "20",
+            "maxResults" => $maxResults,
             "order" => "date",
             "type" => "video",
             "channelId" => $channel_id,
@@ -70,35 +70,32 @@ class YoutubeEndPoint extends AbstractEndPoint
 
         $result = $this->getClient()->execute(self::URL . "search?" . $query);
 
-        return json_decode($result);
+        return json_decode($result, true);
     }
 
     /**
      * Retrieve all data from the given video ids
-     * @param string|string[] $channel_id id of the channel to update (can be multiple, must be separated by comas)
-     * @return \stdClass
+     * @param string[] $channel_id id of channels to update
+     * @return array
      */
-    public function getVideoData($channel_id)
+    public function getVideosData(array $channel_id, $maxResults = 50)
     {
-        if(is_array($channel_id)){
-            $search = implode(",", $channel_id);
-        }else{
-            $search = $channel_id;
-        }
+        $search = implode(",", $channel_id);
         $query = http_build_query(array(
             "part" => "id,snippet,liveStreamingDetails",
+            "maxResults" => $maxResults,
             "id" => $search,
         ));
 
         $result = $this->getClient()->execute(self::URL . "videos?" . $query);
 
-        return json_decode($result);
+        return json_decode($result, true);
     }
 
     /**
      * Retrieve all data from the given video ids
      * @param integer $max the max amount of videos to retrieve
-     * @return \stdClass
+     * @return array
      */
     public function getVideoFeatured($live = false, $max = 50, $order_by = "viewCount")
     {
@@ -116,7 +113,7 @@ class YoutubeEndPoint extends AbstractEndPoint
 
         $result = $this->getClient()->execute(self::URL . "search?" . $query);
 
-        return json_decode($result);
+        return json_decode($result, true);
     }
 
 }
