@@ -1,11 +1,13 @@
 {
-  "name": "plejeune/api-bundle",
+  "name": "darkanakin41/api-bundle",
   "type": "symfony-bundle",
   "description": "Pierre LEJEUNE ApiBundle",
   "keywords": [
-    "Media Bundle"
+    "api",
+    "symfony",
+    "bundle"
   ],
-  "homepage": "https://gitlab.com/pierrelejeune/api-bundle",
+  "homepage": "https://github.com/darkanakin41/api-bundle",
   "license": "MIT",
   "authors": [
     {
@@ -16,22 +18,19 @@
   "require": {
     "php": "^7",
     "ext-curl": "*",
-    "plejeune/core-bundle": "dev-master"
+    "darkanakin41/core-bundle": "dev-master"
   },
   "config": {
     "sort-packages": true
   },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "1.0"
-    }
-  },
   "autoload": {
     "psr-4": {
-      "PLejeune\\ApiBundle\\": ""
-    },
-    "exclude-from-classmap": [
-      "/Tests/"
-    ]
+      "Darkanakin41\\ApiBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Darkanakin41\\ApiBundle\\Tests\\": "tests/"
+    }
   }
 }
