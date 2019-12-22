@@ -16,7 +16,7 @@
     }
   ],
   "require": {
-    "php": "^7",
+    "php": "^7.1",
     "ext-curl": "*",
     "darkanakin41/core-bundle": "dev-master"
   },
