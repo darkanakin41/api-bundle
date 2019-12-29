@@ -1,9 +1,9 @@
 <?php
 
-namespace PLejeune\ApiBundle\EndPoint;
+namespace Darkanakin41\ApiBundle\EndPoint;
 
 
-use PLejeune\ApiBundle\Client\AbstractClient;
+use Darkanakin41\ApiBundle\Client\AbstractClient;
 
 abstract class AbstractEndPoint
 {

@@ -6,10 +6,10 @@
  * Time: 21:06
  */
 
-namespace PLejeune\ApiBundle\Nomenclature;
+namespace Darkanakin41\ApiBundle\Nomenclature;
 
 
-use PLejeune\CoreBundle\Nomenclature\AbstractNomenclature;
+use Darkanakin41\CoreBundle\Nomenclature\AbstractNomenclature;
 
 class ClientNomenclature extends AbstractNomenclature
 {

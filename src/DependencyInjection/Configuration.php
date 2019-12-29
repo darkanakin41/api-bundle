@@ -1,6 +1,6 @@
 <?php
 
-namespace PLejeune\ApiBundle\DependencyInjection;
+namespace Darkanakin41\ApiBundle\DependencyInjection;
 
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -17,7 +17,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('p_lejeune_api');
+        $rootNode = $treeBuilder->root('darkanakin41_api');
 
         $rootNode->children()
             ->arrayNode('clients')

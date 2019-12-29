@@ -1,8 +1,8 @@
 <?php
 
-namespace PLejeune\ApiBundle\EndPoint\Ea;
+namespace Darkanakin41\ApiBundle\EndPoint\Ea;
 
-use PLejeune\ApiBundle\EndPoint\AbstractEndPoint;
+use Darkanakin41\ApiBundle\EndPoint\AbstractEndPoint;
 
 class FutChampionEndPoint extends AbstractEndPoint
 {

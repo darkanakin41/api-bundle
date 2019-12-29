@@ -1,7 +1,7 @@
 <?php
-namespace PLejeune\ApiBundle\EndPoint\Twitch;
+namespace Darkanakin41\ApiBundle\EndPoint\Twitch;
 
-use PLejeune\ApiBundle\EndPoint\AbstractEndPoint;
+use Darkanakin41\ApiBundle\EndPoint\AbstractEndPoint;
 
 class GamesEndPoint extends AbstractEndPoint
 {

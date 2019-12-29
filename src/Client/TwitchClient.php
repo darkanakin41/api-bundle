@@ -1,8 +1,8 @@
 <?php
 
-namespace PLejeune\ApiBundle\Client;
+namespace Darkanakin41\ApiBundle\Client;
 
-use PLejeune\ApiBundle\Client\AbstractClient;
+use Darkanakin41\ApiBundle\Client\AbstractClient;
 
 class TwitchClient extends AbstractClient
 {

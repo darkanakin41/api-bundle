@@ -1,8 +1,8 @@
 <?php
-namespace PLejeune\ApiBundle\EndPoint\Google;
+namespace Darkanakin41\ApiBundle\EndPoint\Google;
 
 
-use PLejeune\ApiBundle\EndPoint\AbstractEndPoint;
+use Darkanakin41\ApiBundle\EndPoint\AbstractEndPoint;
 
 class YoutubeEndPoint extends AbstractEndPoint
 {

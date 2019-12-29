@@ -1,5 +1,5 @@
 services:
-  plejeune.api:
+  darkanakin41.api:
     public: true
-    class: PLejeune\ApiBundle\Service\ApiService
-    arguments: ['%plejeune.api.config%']
+    class: Darkanakin41\ApiBundle\Service\ApiService
+    arguments: ['%darkanakin41.api.config%']

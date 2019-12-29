@@ -1,13 +1,13 @@
 <?php
 
-namespace PLejeune\ApiBundle\DependencyInjection;
+namespace Darkanakin41\ApiBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
-class PLejeuneApiExtension extends Extension
+class Darkanakin41ApiExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -17,7 +17,7 @@ class PLejeuneApiExtension extends Extension
         $configuration = new Configuration();
         $processedConfig = $this->processConfiguration($configuration, $configs);
 
-        $container->setParameter('plejeune.api.config',$processedConfig);
+        $container->setParameter('darkanakin41.api.config',$processedConfig);
 //        $definition = $container->getDefinition('plejeune.api');
 //        $definition->replaceArgument(0, $processedConfig);
     }

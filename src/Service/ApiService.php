@@ -1,9 +1,9 @@
 <?php
 
-namespace PLejeune\ApiBundle\Service;
+namespace Darkanakin41\ApiBundle\Service;
 
 
-use PLejeune\ApiBundle\EndPoint\AbstractEndPoint;
+use Darkanakin41\ApiBundle\EndPoint\AbstractEndPoint;
 use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
 
 class ApiService
@@ -30,7 +30,7 @@ class ApiService
      */
     public function getEndPoint($clientName, $endpointName)
     {
-        $clientClassname = sprintf('PLejeune\\ApiBundle\\Client\\%sClient', ucfirst($clientName));
+        $clientClassname = sprintf('Darkanakin41\\ApiBundle\\Client\\%sClient', ucfirst($clientName));
         if (!class_exists($clientClassname)) throw new \Exception('unhandled_client');
         $clientObject = new $clientClassname();
 
@@ -42,7 +42,7 @@ class ApiService
             call_user_func([$clientObject, $method], $value);
         }
 
-        $endpointClassname = sprintf('PLejeune\\ApiBundle\\EndPoint\\%s\\%sEndPoint', ucfirst($clientName), ucfirst($endpointName));
+        $endpointClassname = sprintf('Darkanakin41\\ApiBundle\\EndPoint\\%s\\%sEndPoint', ucfirst($clientName), ucfirst($endpointName));
         if (!class_exists($endpointClassname)) throw new \Exception('unhandled_endpoint');
         $endpointObject = new $endpointClassname();
         $endpointObject->setClient($clientObject);

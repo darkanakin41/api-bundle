@@ -1,6 +1,6 @@
 <?php
 
-namespace PLejeune\ApiBundle\Client;
+namespace Darkanakin41\ApiBundle\Client;
 
 abstract class AbstractClient
 {
